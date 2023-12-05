@@ -1,0 +1,18 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "package.json",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "myFlix-client"
+  },
+  "keywords": [
+    "myFlix"
+  ],
+  "author": "Rebekah Willis",
+  "license": "UNLICENSED"
+}
