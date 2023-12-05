@@ -1,8 +1,8 @@
 # myFlix-client
-#Project description
+# Project description
 The client-side for an app called movie_api based on its existing server-side code (REST API and database).
 
-#Project dependencies
+# Project dependencies
 React
 ReactDOM
 Bootstrap
