@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { MovieCard } from "../movie-card/movie-card";
-import { MovieView } from "../movie-view/movie-view";
+import { MovieCard } from "../main-view/movie-card.jsx";
+import { MovieView } from "../main-view/movie-view.jsx";
 
 export const MainView = () => {
   const [movies, setMovies] = useState([
@@ -10,7 +10,7 @@ export const MainView = () => {
       description:
         "A teen gang in rural Oklahoma, the Greasers are perpetually at odds with the Socials, a rival group.",
       image:
-        "https://images.app.goo.gl/BqRjM6zaGZdr2sJW9",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5DkeAQqJbmkCB-260JOG6DE70syFT2U5IXxgbR9akZBK-TYxZ1bgtDHjQtbfLmsSnnJs&usqp=CAU",
       genre: "Crime",
       director: "Francis Ford Coppola"
     },
@@ -20,7 +20,7 @@ export const MainView = () => {
       description:
         "A new English teacher, John Keating (Robin Williams), is introduced to an all-boys preparatory school that is known for its ancient traditions and high standards",
       image:
-        "https://images.app.goo.gl/vk48SMQF2Pyo4itZ7",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgAOhZ6bapQHrvCFuHqlfcQ2XxJZ-NiVa6iWdId-DYdVRquzJV4-v2c1pFbE0yPOe2IfI&usqp=CAU",
       genre: "Comedy",
       director: "Peter Weir"
     },
@@ -30,7 +30,7 @@ export const MainView = () => {
       description:
         "Three parapsychologists forced out of their university funding set up shop as a unique ghost removal service in New York City",
       image:
-        "https://images.app.goo.gl/BHkoXqV2kH6xi64c6",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJgkhp8FTPHihILqnvzpzleGCfzUCoZYGuclQ7jS_4iQbqY-Aip2lB1u7XUtszYV9goJA&usqp=CAU",
       genre: "Comedy",
       director: "Ivan Reitman"
     }
