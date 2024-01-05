@@ -6,7 +6,7 @@ export const MainView = () => {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        fetch("https://moviesapi-o4y1.onrender.com")
+        fetch("https://moviesapi-o4y1.onrender.com/movies")
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
