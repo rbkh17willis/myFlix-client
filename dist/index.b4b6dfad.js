@@ -27324,7 +27324,7 @@ const MovieCard = ({ movie, onMovieClick })=>{
         onClick: ()=>{
             onMovieClick(movie);
         },
-        children: movie.title
+        children: movie.Title
     }, void 0, false, {
         fileName: "src/componets/movie-card/movie-card.jsx",
         lineNumber: 6,
