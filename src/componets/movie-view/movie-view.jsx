@@ -8,13 +8,14 @@ export const MovieView = ({ movies, removeFav, addFav}) => {
 
     const { movieId } = useParams();
     const movie = movies.find((movie) => movie._id === movieId);
-/*
+    //testing- console.log ("movie._id", movieId);
+    
     // Similar Movies By Genre
     const selectedMovie = movies.find((movie) => movie._id === movieId);
     const similarMovies = movies.filter((movie) => {
         return movie._id !== movieId && movie.Genre.Name === selectedMovie.Genre.Name;
     });
-*/
+
 
 
     // The User

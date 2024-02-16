@@ -50,7 +50,7 @@ export const MainView = () => {
     }, [token]);
 
  // Add Favorite Movie
- const addFav = (id) => {
+ const addFav = (_id) => {
 
   fetch("https://moviesapi-o4y1.onrender.com/users/${user.Username}/movies/${id}", {
       method: "POST",
