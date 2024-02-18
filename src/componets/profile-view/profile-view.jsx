@@ -33,7 +33,7 @@ export const ProfileView = ({ user, movies, setUser, removeFav, addFav}) => {
             Birthday: birthday
         }
 
-        fetch("https://moviesapi-o4y1.onrender.com/users/${user.Username}", {
+        fetch(`https://moviesapi-o4y1.onrender.com/users/${user.Username}`, {
             method: "PUT",
             body: JSON.stringify(data),
             headers: {
@@ -58,7 +58,7 @@ export const ProfileView = ({ user, movies, setUser, removeFav, addFav}) => {
 
     // Delete User
     const handleDelete = () => {
-        fetch("https://moviesapi-o4y1.onrender.com/users/${user.Username}", {
+        fetch(`https://moviesapi-o4y1.onrender.com/users/${user.Username}`, {
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${token}`

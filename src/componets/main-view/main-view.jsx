@@ -36,7 +36,6 @@ export const MainView = () => {
                         Title: movie.Title,
                         ImagePath: movie.ImagePath,
                         Description: movie.Description,
-                        Year: movie.Year,
                         Genre: {
                             Name: movie.Genre.Name
                         },
@@ -50,9 +49,9 @@ export const MainView = () => {
     }, [token]);
 
  // Add Favorite Movie
- const addFav = (_id) => {
+ const addFav = (id) => {
 
-  fetch("https://moviesapi-o4y1.onrender.com/users/${user.Username}/movies/${id}", {
+  fetch(`https://moviesapi-o4y1.onrender.com/users/${user.Username}/movies/${id}`, {
       method: "POST",
       headers: {
           Authorization: `Bearer ${token}`
@@ -78,7 +77,7 @@ export const MainView = () => {
 // Remove Favorite Movie
 const removeFav = (id) => {
 
-  fetch("https://moviesapi-o4y1.onrender.com/users/${user.Username}/movies/${id}", {
+  fetch(`https://moviesapi-o4y1.onrender.com/users/${user.Username}/movies/${id}`, {
       method: "DELETE",
       headers: {
           Authorization: `Bearer ${token}`

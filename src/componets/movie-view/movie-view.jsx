@@ -46,10 +46,6 @@ export const MovieView = ({ movies, removeFav, addFav}) => {
                         <span className="h6">Genre: </span>
                         <span>{movie.Genre.Name}</span>
                     </div>
-                    <div className="my-1">
-                        <span className="h6">Year: </span>
-                        <span>{movie.Year}</span>
-                    </div>
                     <div>
                         {user.FavoriteMovies.includes(movie._id) ? (
                             <Button className="my-2 me-2"on onClick={() => removeFav(movie._id)}>Remove from Favorite</Button>

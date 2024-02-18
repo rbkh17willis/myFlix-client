@@ -27212,7 +27212,6 @@ const MainView = ()=>{
                     Title: movie.Title,
                     ImagePath: movie.ImagePath,
                     Description: movie.Description,
-                    Year: movie.Year,
                     Genre: {
                         Name: movie.Genre.Name
                     },
@@ -27227,8 +27226,8 @@ const MainView = ()=>{
         token
     ]);
     // Add Favorite Movie
-    const addFav = (_id)=>{
-        fetch("https://moviesapi-o4y1.onrender.com/users/${user.Username}/movies/${id}", {
+    const addFav = (id)=>{
+        fetch(`https://moviesapi-o4y1.onrender.com/users/${user.Username}/movies/${id}`, {
             method: "POST",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -27249,7 +27248,7 @@ const MainView = ()=>{
     };
     // Remove Favorite Movie
     const removeFav = (id)=>{
-        fetch("https://moviesapi-o4y1.onrender.com/users/${user.Username}/movies/${id}", {
+        fetch(`https://moviesapi-o4y1.onrender.com/users/${user.Username}/movies/${id}`, {
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -27279,7 +27278,7 @@ const MainView = ()=>{
                 }
             }, void 0, false, {
                 fileName: "src/componets/main-view/main-view.jsx",
-                lineNumber: 106,
+                lineNumber: 105,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
@@ -27298,7 +27297,7 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/componets/main-view/main-view.jsx",
-                            lineNumber: 117,
+                            lineNumber: 116,
                             columnNumber: 15
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27318,7 +27317,7 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/componets/main-view/main-view.jsx",
-                            lineNumber: 132,
+                            lineNumber: 131,
                             columnNumber: 15
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27340,7 +27339,7 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/componets/main-view/main-view.jsx",
-                            lineNumber: 152,
+                            lineNumber: 151,
                             columnNumber: 15
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27368,7 +27367,7 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/componets/main-view/main-view.jsx",
-                            lineNumber: 173,
+                            lineNumber: 172,
                             columnNumber: 15
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
@@ -27389,24 +27388,24 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/componets/main-view/main-view.jsx",
-                            lineNumber: 199,
+                            lineNumber: 198,
                             columnNumber: 15
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/componets/main-view/main-view.jsx",
-                    lineNumber: 115,
+                    lineNumber: 114,
                     columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/componets/main-view/main-view.jsx",
-                lineNumber: 114,
+                lineNumber: 113,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/componets/main-view/main-view.jsx",
-        lineNumber: 105,
+        lineNumber: 104,
         columnNumber: 3
     }, undefined);
 };
@@ -36302,30 +36301,6 @@ const MovieView = ({ movies, removeFav, addFav })=>{
                                 columnNumber: 21
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "my-1",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                        className: "h6",
-                                        children: "Year: "
-                                    }, void 0, false, {
-                                        fileName: "src/componets/movie-view/movie-view.jsx",
-                                        lineNumber: 50,
-                                        columnNumber: 25
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                        children: movie.Year
-                                    }, void 0, false, {
-                                        fileName: "src/componets/movie-view/movie-view.jsx",
-                                        lineNumber: 51,
-                                        columnNumber: 25
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/componets/movie-view/movie-view.jsx",
-                                lineNumber: 49,
-                                columnNumber: 21
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 children: user.FavoriteMovies.includes(movie._id) ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                                     className: "my-2 me-2",
                                     on: true,
@@ -36333,7 +36308,7 @@ const MovieView = ({ movies, removeFav, addFav })=>{
                                     children: "Remove from Favorite"
                                 }, void 0, false, {
                                     fileName: "src/componets/movie-view/movie-view.jsx",
-                                    lineNumber: 55,
+                                    lineNumber: 51,
                                     columnNumber: 29
                                 }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                                     className: "my-2 me-2",
@@ -36341,12 +36316,12 @@ const MovieView = ({ movies, removeFav, addFav })=>{
                                     children: "Add to Favorite"
                                 }, void 0, false, {
                                     fileName: "src/componets/movie-view/movie-view.jsx",
-                                    lineNumber: 57,
+                                    lineNumber: 53,
                                     columnNumber: 29
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/componets/movie-view/movie-view.jsx",
-                                lineNumber: 53,
+                                lineNumber: 49,
                                 columnNumber: 21
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -36356,12 +36331,12 @@ const MovieView = ({ movies, removeFav, addFav })=>{
                                     children: "Back"
                                 }, void 0, false, {
                                     fileName: "src/componets/movie-view/movie-view.jsx",
-                                    lineNumber: 61,
+                                    lineNumber: 57,
                                     columnNumber: 25
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/componets/movie-view/movie-view.jsx",
-                                lineNumber: 60,
+                                lineNumber: 56,
                                 columnNumber: 21
                             }, undefined)
                         ]
@@ -36380,7 +36355,7 @@ const MovieView = ({ movies, removeFav, addFav })=>{
                 children: "Similar Movies"
             }, void 0, false, {
                 fileName: "src/componets/movie-view/movie-view.jsx",
-                lineNumber: 65,
+                lineNumber: 61,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
@@ -36398,29 +36373,29 @@ const MovieView = ({ movies, removeFav, addFav })=>{
                             isFavorite: user.FavoriteMovies.includes(movie._id)
                         }, void 0, false, {
                             fileName: "src/componets/movie-view/movie-view.jsx",
-                            lineNumber: 71,
+                            lineNumber: 67,
                             columnNumber: 25
                         }, undefined)
                     }, movie._id, false, {
                         fileName: "src/componets/movie-view/movie-view.jsx",
-                        lineNumber: 70,
+                        lineNumber: 66,
                         columnNumber: 21
                     }, undefined)) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: "There are no similar Movies"
                     }, void 0, false, {
                         fileName: "src/componets/movie-view/movie-view.jsx",
-                        lineNumber: 80,
+                        lineNumber: 76,
                         columnNumber: 17
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/componets/movie-view/movie-view.jsx",
-                    lineNumber: 79,
+                    lineNumber: 75,
                     columnNumber: 19
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/componets/movie-view/movie-view.jsx",
-                lineNumber: 66,
+                lineNumber: 62,
                 columnNumber: 13
             }, undefined)
         ]
@@ -36916,7 +36891,7 @@ const ProfileView = ({ user, movies, setUser, removeFav, addFav })=>{
             Email: email,
             Birthday: birthday
         };
-        fetch("https://moviesapi-o4y1.onrender.com/users/${user.Username}", {
+        fetch(`https://moviesapi-o4y1.onrender.com/users/${user.Username}`, {
             method: "PUT",
             body: JSON.stringify(data),
             headers: {
@@ -36937,7 +36912,7 @@ const ProfileView = ({ user, movies, setUser, removeFav, addFav })=>{
     };
     // Delete User
     const handleDelete = ()=>{
-        fetch("https://moviesapi-o4y1.onrender.com/users/${user.Username}", {
+        fetch(`https://moviesapi-o4y1.onrender.com/users/${user.Username}`, {
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${token}`
