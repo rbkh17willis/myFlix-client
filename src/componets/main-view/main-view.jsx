@@ -19,12 +19,12 @@ export const MainView = () => {
     const [movies, setMovies] = useState([]);
     
     useEffect(() => {
-        fetch("https://moviesapi-o4y1.onrender.com/movies")
+        fetch(`https://moviesapi-o4y1.onrender.com/movies`)
         if (!token) {
             return;
           }
       
-          fetch("https://moviesapi-o4y1.onrender.com/movies", {
+          fetch(`https://moviesapi-o4y1.onrender.com/movies`, {
             headers: { Authorization: `Bearer ${token}` }
           })
             .then((response) => response.json())

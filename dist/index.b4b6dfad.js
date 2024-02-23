@@ -27198,9 +27198,9 @@ const MainView = ()=>{
     const [token, setToken] = (0, _react.useState)(storedToken ? storedToken : null);
     const [movies, setMovies] = (0, _react.useState)([]);
     (0, _react.useEffect)(()=>{
-        fetch("https://moviesapi-o4y1.onrender.com/movies");
+        fetch(`https://moviesapi-o4y1.onrender.com/movies`);
         if (!token) return;
-        fetch("https://moviesapi-o4y1.onrender.com/movies", {
+        fetch(`https://moviesapi-o4y1.onrender.com/movies`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
