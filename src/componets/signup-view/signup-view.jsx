@@ -25,18 +25,23 @@ export const SignupView = () => {
       headers: {
         "Content-Type": "application/json",
       },
-    }).then((response) => {
+    }).then(async (response) => {
+      console.log(data)
       if (response.ok) {
-        alert("Signup successful");
-        window.location.reload();
+          alert("Signup successful");
+          window.location.reload();
+      } else if (username.length < 5) {
+          alert("Username must be 5 characters or longer.");
       } else {
-        alert("Signup failed");
+          alert("Signup failed");
       }
-    });
+  }).catch(error => {
+      console.error('Error: ', error);
+  });
   };
 
   return (
-  <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} className="mt-5">
     <Form.Group controlId="formUsername">
         <Form.Label>Username:</Form.Label>
         <Form.Control
@@ -44,7 +49,7 @@ export const SignupView = () => {
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         required
-        minLength="3"
+        minLength="5"
         />
     </Form.Group>
     <Form.Group controlId="formPassword">
@@ -74,49 +79,7 @@ export const SignupView = () => {
         required
         />
     </Form.Group>
-    <Button type="submit" className="mt-2">Submit</Button>
+    <Button type="submit" onClick={handleSubmit} className="mt-2">Submit</Button>
   </Form>
   ); 
-  /*return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Username:
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-          minLength="3"
-        />
-      </label>
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Email:
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Birthday:
-        <input
-          type="date"
-          value={birthday}
-          onChange={(e) => setBirthday(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit">Submit</button>
-    </form>
-  ); */
 };
